@@ -1,6 +1,16 @@
 # JustEnoughCharacters Unofficial NeoForge Edition
 
-Support 1.20.4~1.20.6 NeoForge
+支持 1.20.4~1.20.6 NeoForge
+
+## 为什么会有这个版本？
+因为上游（JustEnoughCharacters）不打算更新1.20.4，而我想要在1.20.4NeoForge上运行这个模组让其他模组支持拼音搜索。
+
+## 致谢
+
+- 感谢[Towdium](https://github.com/Towdium)和[vfyjxf](https://github.com/vfyjxf)
+
+<details>
+<summary>原README</summary>
 
 ## 作用
 
@@ -12,7 +22,7 @@ Support 1.20.4~1.20.6 NeoForge
 
 ## 原理
 
-由于核心匹配逻辑已经分离到 [PinIn][9] 这个项目了，本模组当前版本的工作原理极为简单。我们只需要将各模组文本匹配相关的代码找到，然后替换成兼容拼音的实现即可。我们将相关的调用位置填写在 [generate.py][10] 里，然后基于 Forge 现版本的 coremod 机制，使用脚本直接生成所需的 coremod，编译时打入模组包中即可。当然，有一些模组需要特别的兼容处理，这一部分内容你可以在 [这里][11] 找到。
+由于核心匹配逻辑已经分离到 [PinIn](https://github.com/Towdium/PinIn) 这个项目了，本模组当前版本的工作原理极为简单。我们只需要将各模组文本匹配相关的代码找到，然后替换成兼容拼音的实现即可。我们将相关的调用位置填写在 [generate.py](generate.py) 里，然后基于 Forge 现版本的 coremod 机制，使用脚本直接生成所需的 coremod，编译时打入模组包中即可。当然，有一些模组需要特别的兼容处理，这一部分内容你可以在 [这里](src/main/resources/me/towdium/jecharacters/scripts) 找到。
 
 至于 Fabric，我实在没有时间研究如何进行开发了，但是基于 PinIn 的基础上进行开发的话，根据经验来看仍然会是一个小于 1k 行的小项目，这方面欢迎其他人接坑。本项目和 PinIn 的核心匹配逻辑，在肉眼可见的将来我还是会保持维护的，这方面不必担心。
 
@@ -22,16 +32,10 @@ Support 1.20.4~1.20.6 NeoForge
 
 ## 致谢
 
-- 本模组更新到 1.16 的绝大部分工作是由 [yzl210][8] 完成的。
-- 本模组更新到 1.18 的绝大部分工作是由 [yzl210][8] 和 [vfyjxf][13] 完成的。
-- 本模组对于 1.16 的一吨 mod 的支持是由 [Death-123][12] 完成的。
-- 本模组的核心库 PinIn 中使用的拼音数据来自于 [地球拼音][6] 和 [pinyin-data][7]。
+- 本模组更新到 1.16 的绝大部分工作是由 [yzl210](https://github.com/yzl210) 完成的。
+- 本模组更新到 1.18 的绝大部分工作是由 [yzl210](https://github.com/yzl210) 和 [vfyjxf](https://github.com/vfyjxf) 完成的。
+- 本模组对于 1.16 的一吨 mod 的支持是由 [Death-123](https://github.com/Death-123) 完成的。
+- 本模组的核心库 PinIn 中使用的拼音数据来自于 [地球拼音](https://github.com/rime/rime-terra-pinyin) 和 [pinyin-data](https://github.com/mozillazg/pinyin-data)。
 
-[6]: https://github.com/rime/rime-terra-pinyin
-[7]: https://github.com/mozillazg/pinyin-data
-[8]: https://github.com/yzl210
-[9]: https://github.com/Towdium/PinIn
-[10]: https://github.com/Towdium/JustEnoughCharacters/blob/1.16/generate.py
-[11]: https://github.com/Towdium/JustEnoughCharacters/tree/1.16/src/main/resources/me/towdium/jecharacters/scripts
-[12]: https://github.com/Death-123
-[13]: https://github.com/vfyjxf
+</details>
+
