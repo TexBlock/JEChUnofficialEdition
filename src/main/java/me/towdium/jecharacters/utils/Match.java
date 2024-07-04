@@ -8,9 +8,9 @@ import me.towdium.pinin.searchers.TreeSearcher;
 import mezz.jei.core.search.suffixtree.GeneralizedSuffixTree;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.searchtree.SuffixArray;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.config.ModConfigEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.config.ModConfigEvent;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.*;
@@ -20,9 +20,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static me.towdium.pinin.searchers.Searcher.Logic.CONTAIN;
-import static net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.MOD;
 
-@Mod.EventBusSubscriber(bus = MOD)
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class Match {

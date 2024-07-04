@@ -1,6 +1,6 @@
 package me.towdium.jecharacters.utils;
 
-import net.minecraftforge.fml.ModList;
+import net.neoforged.fml.ModList;
 import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;

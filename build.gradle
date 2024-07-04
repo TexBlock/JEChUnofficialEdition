@@ -1,21 +1,23 @@
 plugins {
     id 'idea'
-    id "dev.architectury.loom" version "1.1-SNAPSHOT"
+    id "dev.architectury.loom" version "1.7-SNAPSHOT"
 }
 
 version = "${mc_version}-${verspec}.${verbuild}"
-group = "me.towdium.jecharacters"
-archivesBaseName = "jecharacters"
+group = "${maven_group}"
+base.archivesName = "${archive_base_name}"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 repositories {
     mavenCentral()
-    maven { url = 'https://jitpack.io' }
+    maven { url = "https://maven.neoforged.net/releases/" }
+    maven { url = "https://jitpack.io" }
     maven { url = "https://dvs1.progwml6.com/files/maven/" }
     maven { url = "https://maven.blamejared.com/" }
     maven { url = "https://modmaven.dev" }
-    maven { url = 'https://maven.parchmentmc.org' }
+    maven { url = "https://maven.parchmentmc.org" }
+
 }
 
 configurations {
@@ -29,20 +31,15 @@ loom {
 
 
 dependencies {
-
     mappings loom.layered() {
         officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-1.20.1:2023.06.26@zip")
+        parchment("org.parchmentmc.data:parchment-${project.mc_version}:2024.04.14@zip")
     }
 
     minecraft "com.mojang:minecraft:${project.mc_version}"
-    forge "net.minecraftforge:forge:${project.forge_version}"
-    modImplementation 'mezz.jei:jei-1.20.1-forge:15.2.0.22'
-    implementation "com.github.towdium:PinIn:${verpinin}"
-    forgeRuntimeLibrary "com.github.towdium:PinIn:${verpinin}"
-    include(group: 'com.github.towdium', name: 'PinIn', version: "${verpinin}") {
-        transitive = false
-    }
+    neoForge "net.neoforged:neoforge:${project.neoforge_version}"
+    modImplementation "mezz.jei:jei-${project.mc_version}-neoforge:17.3.1.3"
+    forgeRuntimeLibrary(implementation(include("com.github.TexBlock:PinIn:${verpinin}") { transitive = false }))
 }
 
 test {
@@ -52,8 +49,8 @@ test {
 tasks.named('jar', Jar).configure {
     manifest {
         attributes([
-                "Specification-Title"     : 'Just Enough Characters',
-                "Specification-Vendor"    : 'Towdium',
+                "Specification-Title"     : 'Just Enough Characters Unofficial NeoForge Edition',
+                "Specification-Vendor"    : 'TexTrue',
                 "Specification-Version"   : "${verspec}",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : "${verspec}.${verbuild}",

@@ -2,8 +2,8 @@ import os
 
 manual = ['jei1', 'jei2', 'jei3', 'psi']
 suffix = [
-    'net.minecraft.client.searchtree.ResourceLocationSearchTree:m_235212_(Ljava/util/List;Ljava/util/function/Function;)Lnet/minecraft/client/searchtree/ResourceLocationSearchTree;',  # Vanilla
-    'net.minecraft.client.searchtree.PlainTextSearchTree:m_235197_(Ljava/util/List;Ljava/util/function/Function;)Lnet/minecraft/client/searchtree/PlainTextSearchTree;', # Vanilla
+    'net.minecraft.client.searchtree.ResourceLocationSearchTree:create(Ljava/util/List;Ljava/util/function/Function;)Lnet/minecraft/client/searchtree/ResourceLocationSearchTree;',  # Vanilla
+    'net.minecraft.client.searchtree.PlainTextSearchTree:create(Ljava/util/List;Ljava/util/function/Function;)Lnet/minecraft/client/searchtree/PlainTextSearchTree;', # Vanilla
     "dev.emi.emi.search.EmiSearch:bake()V"
 ]
 contains = [
@@ -51,8 +51,8 @@ contains = [
     'com.lothrazar.storagenetwork.api.util.UtilInventory:doOverlap(Ljava/lang/String;Ljava/lang/String;)Z',  # Simple Storage Network legacy
     'com.lothrazar.storagenetwork.gui.NetworkWidget:doesStackMatchSearch(Lnet/minecraft/world/item/ItemStack;)Z', # Simple Storage Network
     'com.latmod.mods.projectex.gui.GuiTableBase:updateValidItemList()V',  # Project EX
-    'net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen:m_98630_()V',  # Vanilla
-    'net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen:m_98619_(Ljava/lang/String;)V',  # Vanilla
+    'net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen:refreshSearchResults()V',  # Vanilla
+    'net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen:updateVisibleTags(Ljava/lang/String;)V',  # Vanilla
     'amerifrance.guideapi.gui.GuiSearch:getMatches:(Lamerifrance.guideapi.api.impl.Book;Ljava.lang.String;Lnet.minecraft.entity.player.EntityPlayer;Lnet.minecraft.item.ItemStack;)Ljava.util.List;',  # Guide-API
     'thaumcraft.client.gui.GuiResearchBrowser:updateSearch:()V',  # Thaumcraft
     'zuve.searchablechests.ChestEventHandler:stackMatches(Ljava/lang/String;Lnet/minecraft/world/item/ItemStack;)Z',  # Searchable Chests
@@ -135,7 +135,7 @@ regExp = [
 
 pattern = """// Generated
 function initializeCoreMod() {{
-    Java.type('net.minecraftforge.coremod.api.ASMAPI').loadFile('me/towdium/jecharacters/scripts/_lib.js');
+    Java.type('net.neoforged.coremod.api.ASMAPI').loadFile('me/towdium/jecharacters/scripts/_lib.js');
     return {{
         'jecharacters-gen{idx}': {{
             'target': {{

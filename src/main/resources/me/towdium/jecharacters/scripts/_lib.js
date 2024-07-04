@@ -2,7 +2,7 @@ var Ops = Java.type('org.objectweb.asm.Opcodes');
 var InsnMethod = Java.type('org.objectweb.asm.tree.MethodInsnNode');
 var InsnDynamic = Java.type('org.objectweb.asm.tree.InvokeDynamicInsnNode');
 var Handle = Java.type('org.objectweb.asm.Handle');
-var Api = Java.type('net.minecraftforge.coremod.api.ASMAPI');
+var Api = Java.type('net.neoforged.coremod.api.ASMAPI');
 
 function transConstruct(method, src, dst) {
     var i = method.instructions.iterator();

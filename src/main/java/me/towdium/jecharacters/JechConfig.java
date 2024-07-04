@@ -1,22 +1,21 @@
 package me.towdium.jecharacters;
 
 import me.towdium.pinin.Keyboard;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.BooleanValue;
-import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
-import net.minecraftforge.common.ForgeConfigSpec.EnumValue;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
+import net.neoforged.neoforge.common.ModConfigSpec.ConfigValue;
+import net.neoforged.neoforge.common.ModConfigSpec.EnumValue;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 
-import static net.minecraftforge.fml.config.ModConfig.Type.COMMON;
-
 public class JechConfig {
     public static final String PATH = "jecharacters.toml";
-    public static ForgeConfigSpec common;
+    public static ModConfigSpec common;
 
     public static BooleanValue enableQuote;
 
@@ -35,7 +34,7 @@ public class JechConfig {
 
     static {
         Predicate<Object> p = i -> i instanceof String;
-        ForgeConfigSpec.Builder b = new ForgeConfigSpec.Builder();
+        ModConfigSpec.Builder b = new ModConfigSpec.Builder();
         b.push("General");
         b.comment("Keyboard for the checker to use");
         enumKeyboard = b.defineEnum("enumKeyboard", Spell.QUANPIN);
@@ -70,7 +69,7 @@ public class JechConfig {
     }
 
     static void register() {
-        ModLoadingContext.get().registerConfig(COMMON, JechConfig.common,
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, JechConfig.common,
                 FMLPaths.CONFIGDIR.get().resolve(PATH).toString());
     }
 

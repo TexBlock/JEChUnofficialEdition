@@ -124,7 +124,7 @@ public class Profiler {
         f.stream().forEach(entry -> {
             try (InputStream is = f.getInputStream(entry)) {
                 if ("META-INF/mods.toml".equals(entry.getName())) ret.mods = readInfoNew(is);
-                else if ("mcmod.info".equals(entry.getName())) ret.mods = readInfoOld(is);
+                else if ("META-INF/neoforge.mods.toml".equals(entry.getName())) ret.mods = readInfoOld(is);
                 else if (entry.getName().endsWith(".class")) {
                     long size = entry.getSize() + 4;
                     if (size > Integer.MAX_VALUE) {
