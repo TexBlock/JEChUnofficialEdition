@@ -3,7 +3,7 @@
 支持 1.20.4~1.20.6 NeoForge
 
 ## 为什么会有这个版本？
-因为上游（JustEnoughCharacters）不打算更新1.20.4，而我想要在1.20.4NeoForge上运行这个模组让其他模组支持拼音搜索。
+因为上游（JustEnoughCharacters）不打算更新1.20.4，而我想要在1.20.4NeoForge上运行这个模组让其他模组支持拼音输入。
 
 ## 致谢
 
