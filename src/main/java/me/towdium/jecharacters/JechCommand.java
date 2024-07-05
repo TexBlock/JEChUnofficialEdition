@@ -7,9 +7,7 @@ import me.towdium.jecharacters.utils.Match;
 import me.towdium.jecharacters.utils.Profiler;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.Component;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.client.event.RegisterClientCommandsEvent;
 
 import java.io.FileOutputStream;
@@ -19,7 +17,6 @@ import java.io.OutputStreamWriter;
 import static me.towdium.jecharacters.JustEnoughCharacters.printMessage;
 import static net.minecraft.commands.Commands.literal;
 
-@Mod.EventBusSubscriber(Dist.CLIENT)
 public class JechCommand {
 
     static LiteralArgumentBuilder<CommandSourceStack> builder;
@@ -80,9 +77,13 @@ public class JechCommand {
         return 0;
     }
 
-    @SubscribeEvent
-    public static void onClientCommandRegister(RegisterClientCommandsEvent event) {
-        event.getDispatcher().register(builder);
+    public static LiteralArgumentBuilder<CommandSourceStack> getBuilder() {
+        return builder;
     }
 
+    public static void onClientCommandRegister(IEventBus eventBus) {
+        eventBus.addListener(RegisterClientCommandsEvent.class, event -> {
+            event.getDispatcher().register(builder);
+        });
+    }
 }

@@ -8,9 +8,6 @@ import me.towdium.pinin.searchers.TreeSearcher;
 import mezz.jei.core.search.suffixtree.GeneralizedSuffixTree;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.searchtree.SuffixArray;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.config.ModConfigEvent;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.*;
@@ -21,7 +18,6 @@ import java.util.regex.Pattern;
 
 import static me.towdium.pinin.searchers.Searcher.Logic.CONTAIN;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class Match {
@@ -83,11 +79,6 @@ public class Match {
         if (start && end && s2.length() < 4) end = false;
         if (start || end) s2 = s2.substring(start ? 2 : 0, s2.length() - (end ? 2 : 0));
         return contains(s1, s2);
-    }
-
-    @SubscribeEvent
-    public static void onConfigChange(ModConfigEvent e) {
-        onConfigChange();
     }
 
     public static void onConfigChange() {
