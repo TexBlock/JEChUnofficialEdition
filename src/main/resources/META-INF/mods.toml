@@ -1,13 +1,13 @@
 modLoader="javafml"
 loaderVersion="[1,)"
-issueTrackerURL="https://github.com/TexBlock/JustEnoughCharacters/issues"
-license="The MIT License (MIT)"
+issueTrackerURL="https://github.com/TexBlock/JEChUnofficialEdition/issues"
+license="MIT"
 
 [[mods]]
 modId="jecharacters"
 version="${version}"
 displayName="Just Enough Characters Unofficial NeoForge Edition"
-displayURL="https://github.com/TexBlock/JustEnoughCharacters"
+displayURL="https://github.com/TexBlock/JEChUnofficialEdition"
 credits="Thanks to TartaricAcid, 3TUSK, Seraph_JACK, Snownee and many people for their efforts for development of the Chinese modding community."
 authors="TexTrue(TexBlock), Towdium, yzl210, Death-123, vfyjxf_"
 description="Pinyin search for JEI and more."
