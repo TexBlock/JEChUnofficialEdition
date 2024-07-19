@@ -1,13 +1,11 @@
-# JustEnoughCharacters Unofficial NeoForge Edition
+# JustEnoughCharacters Unofficial Edition
 
-支持 1.20.4 NeoForge
+JustEnoughCharacters unofficial NeoForge 1.20.4 port.
 
-## 为什么会有这个版本？
-因为上游（JustEnoughCharacters）不打算更新1.20.4，而我想要在1.20.4NeoForge上运行这个模组让其他模组支持拼音输入。
+## Thanks
 
-## 致谢
-
-- 感谢[Towdium](https://github.com/Towdium)和[vfyjxf](https://github.com/vfyjxf)
+- [Towdium](https://github.com/Towdium)
+- [vfyjxf](https://github.com/vfyjxf)
 
 <details>
 <summary>原README</summary>
