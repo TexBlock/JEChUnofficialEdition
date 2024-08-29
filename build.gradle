@@ -44,7 +44,7 @@ dependencies {
     neoForge "net.neoforged:neoforge:${project.neoforge_version}"
     modImplementation "mezz.jei:jei-${project.mc_version}-neoforge:17.3.1.3"
 
-    forgeRuntimeLibrary(implementation(include("me.texblock:pinin:${verpinin}") { transitive = false }))
+    forgeRuntimeLibrary(implementation(include("com.github.towdium:PinIn:${verpinin}") { transitive = false }))
 }
 
 test {
